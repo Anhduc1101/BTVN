@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .header {
+            border: 1px solid;
+            height: 30px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .body {
+            border: 1px solid;
+            height: 30px;
+            /* padding-top: 5px; */
+            padding-bottom: 5px;
+        }
+
+        .foot {
+            border: 1px solid;
+            height: 30px;
+            padding-top: 5px;
+            /* padding-bottom: 5px; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="">
+        <p>Thông tin sản phẩm</p>
+        <div class="header">
+            <table>
+                <tr>
+                    <td>
+                        <label for="">Tên sản phẩm:</label>
+                        <input type="text" style="width: 300px;">
+                        <label for="">Số lượng:</label>
+                        <input type="text" style="width: 100px;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Thông tin giao hàng</p>
+        <div class="body">
+            <table>
+                <tr>
+                    <td>
+                        <label for="">Họ và tên:</label>
+                        <input type="text" name="" id="">
+                        <label for="">Email:</label>
+                        <input type="text" name="" id="">
+                        <label for="">Số điện thoại:</label>
+                        <input type="text" name="" id="">
+                        <label for="">Địa chỉ:</label>
+                        <textarea name="" id="" cols="30" rows="1"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Thông tin thanh toán</p>
+        <div class="foot">
+            <table>
+                <tr>
+                    <td>
+                        <label for="">Phương thức thanh toán:</label>
+                        <select name="" id="">
+                            <option value="">Thanh toán khi nhận hàng</option>
+                        </select>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </form>
+</body>
+
+</html>
