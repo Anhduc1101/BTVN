@@ -1,0 +1,22 @@
+.out{
+    width: 300px;
+    height: 200px;
+    border: 1px solid;
+    background-color: aqua;
+}
+.in{
+    width: 200px;
+    height: 100px;
+    border: 1px solid;
+    margin: 50px;
+    background-color: red;
+    font-weight: bold ;
+    font-size: 50px;
+    text-align: center;
+   line-height: 100px;
+   color: white;
+}
+.in:hover{
+    background-color: gray;
+    transition: all 2s ease-in-out;
+}

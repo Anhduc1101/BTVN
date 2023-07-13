@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.out {
+    width: 300px;
+    height: 200px;
+    border: 1px solid;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.in {
+    width: 200px;
+    height: 100px;
+    border: 1px solid;
+    margin: 30px;
+    background-color: rgb(179, 255, 0);
+    font-weight: bold;
+    font-size: 20px;
+    /* text-align: center; */
+    /* line-height: 100px; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.in:hover {
+    /* transform: rotate(-45deg); */
+    border: 20px solid red;
+}

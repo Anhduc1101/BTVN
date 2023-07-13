@@ -1,0 +1,27 @@
+.d {
+    width: 100px;
+    height: 90px;
+    background-color: blue;
+    /* margin-top: 50px; */
+    font-size: 20px;
+}
+
+ul {
+    padding-top: 20px;
+    transition: all 2s;
+    transform: translateX(-150px);
+}
+
+.right {
+    padding-left: 10px;
+}
+
+i {
+    cursor: pointer;
+    scale: 2;
+    padding-top: 20px;
+}
+
+i:active+ul {
+    transform: translateX(0px);
+}
