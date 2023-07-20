@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = prompt("Nhập id:");
+        if(id=="admin"){
+            let pass= prompt("Enter pass:");
+            if(pass=="master"){
+                document.write("welcome");
+            }else if(pass=="null"){
+                document.write("canceled");
+            }else{
+                document.write("Wrong");
+            }
+        }else if(id=="null"){
+            document.write("canceled")
+        }else {
+            document.write("i don't know")
+        }
+    </script>
+</body>
+</html>

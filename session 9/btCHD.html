@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let day = +prompt("Nhập vào ngày sinh:");
+        let month = +prompt("Nhập vào tháng sinh");
+        switch (month) {
+            case 1:
+                if (day > 0 && day <= 19) {
+                    document.write("Cung Ma Kết");
+                } else if (day > 19 && day <= 31) {
+                    document.write("Cung Bảo Bình");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 2:
+                if (day > 0 && day <= 18) {
+                    document.write("Cung Bảo Bình");
+                } else if (day > 18 && (day <= 28 || day <= 29)) {
+                    document.write("Cung Song Ngư");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 3:
+                if (day > 0 && day <= 20) {
+                    document.write("Cung Song Ngư");
+                } else if (day > 20 && day <= 31) {
+                    document.write("Bạch Dương");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 4:
+                if (day > 0 && day <= 19) {
+                    document.write("Cung Bạch Dương");
+                } else if (day > 19 && day <= 30) {
+                    document.write("Cung Kim Ngưu");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 5:
+                if (day > 0 && day <= 20) {
+                    document.write("Cung Kim Ngưu");
+                } else if (day > 20 && day <= 31) {
+                    document.write("Cung Song Tử");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 6:
+                if (day > 0 && day <= 21) {
+                    document.write("Cung Song tử");
+                } else if (day > 21 && day <= 30) {
+                    document.write("Cung Cự Giải");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 7:
+                if (day > 0 && day <= 22) {
+                    document.write("Cung Cự Giải");
+                } else if (day > 22 && day <= 31) {
+                    document.write("Cung Sư Tử");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 8:
+                if (day > 0 && day <= 22) {
+                    document.write("Cung Sư Tử");
+                } else if (day > 22 && day <= 31) {
+                    document.write("Cung Xử Nữ");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 9:
+                if (day > 0 && day <= 22) {
+                    document.write("Cung Xử Nữ");
+                } else if (day > 22 && day <= 30) {
+                    document.write("Cung Thiên Bình");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 10:
+                if (day > 0 && day <= 23) {
+                    document.write("Cung Thiên Bình");
+                } else if (day > 23 && day <= 31) {
+                    document.write("Cung Hổ Cáp");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 11:
+                if (day > 0 && day <= 21) {
+                    document.write("Cung Hổ Cáp");
+                } else if (day > 21 && day <= 30) {
+                    document.write("Cung Nhân Mã");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            case 12:
+                if (day > 0 && day <= 22) {
+                    document.write("Cung Nhân Mã");
+                } else if (day > 22 && day <= 31) {
+                    document.write("Cung Ma Kết");
+                } else {
+                    document.write("Không tồn tại!");
+                }
+                break;
+            default:
+                document.write("Ngày tháng không hợp lệ");
+        }
+
+    </script>
+</body>
+
+</html>

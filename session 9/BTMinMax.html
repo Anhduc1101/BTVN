@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("Nhập số a:");
+        let b = +prompt("Nhập số b:");
+        let c = +prompt("Nhập số c:");
+        if (a > b && a > c) {
+            if (b > c) {
+                document.write("Max là:" + a);
+                document.write("Min là:" + c);
+            } else {
+                document.write("Max là:" + a);
+                document.write("Min là:" + b);
+            }
+        } else if (b > a && b > c) {
+            if (a > c) {
+                document.write("Max là:" + b);
+                document.write("Min là:" + c);
+            } else {
+                document.write("Max là:" + b);
+                document.write("Min là:" + a);
+            }
+        } else {
+            document.write("Max là:" + c);
+            document.write("Min là:" + a);
+        }
+    </script>
+</body>
+</html>
