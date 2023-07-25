@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number = +prompt("Nhập số number:");
+        let count = 0;
+        if (number > 0) {
+            let check = true;
+            for (let i = 2; count < number; i++) {
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        check = false;
+                        break;
+                    }
+                }
+                 if (check == true) {
+                    console.log(i);
+                    count++;
+                }
+                check = true;
+            }
+        }
+        // for(;count<=number;count++){
+        //     let N=2;
+        //     for(;N<count;N++){
+        //         if(N%=0)
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
