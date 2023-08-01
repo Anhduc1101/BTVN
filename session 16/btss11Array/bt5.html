@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // bài tập 5. Khai báo và khởi tạo mảng 1 chiều số nguyên. Nhập vào 2 số nguyên a, b.
+        // Khởi tạo mảng gồm các phần tử của mảng số nguyên mà giá trị nằm giữa a và b.
+
+        // tạo mảng rỗng
+        // nhập a,b
+        // thêm cacs phần tử từ a đến b vào mảng prompt
+        let arrIteger = [];
+        let a = +prompt("Nhập vào số a: ");
+        let b = +prompt("Nhập vào số b: ");
+        for (let i = a; i <= b; i++) {
+            arrIteger.push(i);
+        }
+        console.log(`Số nguyên đầu tiên là : ${a}`);
+        console.log(`Số nguyên cuối cùng là : ${b}`);
+        console.log(arrIteger);
+    </script>
+</body>
+</html>

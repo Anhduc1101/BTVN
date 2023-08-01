@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3. Tạo mảng có tên là styles có giá trị các phần tử là “Jazz”, “Blues”
+            let array = ["Jazz", "Blues"];
+            // a. Thêm phần tử “Rock-n-Roll” vào cuối mảng
+            array.push("Rock-n-Roll");
+            // b. Thay thế phần tử nằm chính giữa mảng bằng “Classics” nếu mảng có tổng số phần tử là lẻ
+            if (array.length % 2 !== 0) {
+                array[Math.floor(array.length / 2)] = "Classics";
+            }
+            // c. Xóa phần tử đầu tiên của mảng và hiển thị mảng
+            array.shift();
+            // d. Thêm phần tử “Rap” và “Reggae” vào đầu mảng và hiển thị
+            array.unshift("Rap");
+            array.unshift("Reggae");
+            console.log(array);
+    </script>
+</body>
+</html>

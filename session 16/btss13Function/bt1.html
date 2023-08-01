@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Viết function in ra câu “Xin chào Rikkei Academy”
+
+        // function inXinChao() {
+        //     console.log("Xin chao RA");
+        // }
+        // inXinChao();
+
+
+        //2. Viết function tính bình phương của một số
+
+        // function isSquare(x){
+        //     return x*x;
+        // }
+        // console.log(isSquare(5));
+
+
+        //3. Viết function tính thế kỷ của một năm nhập vào từ bàn phím. Biết thế kỷ thứ nhất tính từ năm 1 đến 100
+
+        // let nam = +prompt("Nhập vào số năm: ");
+        // if (nam % 100 == 0) {
+        //     console.log(`Năm ${nam} thuộc thé kỷ thứ ${nam / 100}`);
+        // } else {
+        //     console.log(`Năm ${nam} thuộc thé kỷ thứ ${Math.ceil(nam / 100)}`);
+        // }
+
+
+        //// 4. Cho chuỗi dài hơn 15 ký tự, viết function cắt chuỗi, lấy ra 10 ký tự đầu
+        // tiên và thêm vào dấu “…” ở cuối chuỗi
+
+        // let str = prompt("Nhap chuoi");
+
+        // function inChuoi(str) {
+        //     if (str.length < 15) {
+        //         console.log(str);
+        //     } else {
+        //         str = str.slice(0, 15);
+        //         console.log(str + "...");
+        //     }
+        // }
+        // inChuoi(str);
+
+
+        // 5. Viết function chuẩn hóa một từ - chỉ viết hoa chữ cái đầu tiên. 
+        //Ví dụ:“rIkKEi” sau khi chuẩn hóa thành “Rikkei”
+        // xin chao cac ban => Xin Chao Cac Ban
+
+        // let chuoi = prompt("Nhap chuoi can chuan hoa");
+        // function chuanHoa(chuoi) {
+        //     let chuoiRong = "";
+        //     for (i = 0; i < chuoi.length; i++) {
+        //         if (i == 0) {
+        //             chuoiRong += chuoi[i].toUpperCase();
+        //         } else if (chuoi[i] == " " && chuoi[i + 1] != " ") {
+        //             chuoiRong += " ";
+        //             chuoiRong += chuoi[++i].toUpperCase();
+        //             i++;
+        //         } else {
+        //             chuoiRong += chuoi[i].toLowerCase();
+        //         }
+        //     }
+        //     return chuoiRong;
+        // }
+        // const value = chuanHoa(chuoi);
+        // console.log(value);
+
+
+
+        // 6. Viết function trả ra giá trị lớn nhất trong một mảng số
+        // let str = [1, 5, 7, 4, 3, 6, 9, 4, 3, 5, 8];
+
+        // function findMax(x) {
+        //     return Math.max(...str);
+        // }
+        // console.log(findMax());
+
+
+
+        // 7. Viết function kiểm tra số chẵn-lẻ, nguyên tố, hoàn hảo
+        // let arr = [1, 5, 7, 4, 3, 6, 9, 4, 3, 5, 8]
+        // function findOddAndEven(number) {
+        //     for (i = 0; i < arr.length; i++) {
+        //         if (arr[i] % 2 == 0) {
+        //             console.log(`${arr[i]} la so chan`);
+        //         } else {
+        //             console.log(`${arr[i]} la so le`);
+        //         }
+        //     }
+        // }
+        // console.log(findOddAndEven());
+
+        // function isPrime(number) {
+        //     for (i = 2; i < arr.length; i++) {
+        //         if (number % i == 0) {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // for (const value of arr) {
+        //     if (isPrime(value)) {
+        //         console.log(value, " la so nguyen to");
+        //     }
+        // }
+
+
+        // 8. Viết function trả ra trung bình cộng của một mảng số
+        // let arr1 = [1, 5, 7, 4, 3, 6, 9, 4, 3, 5, 8];
+
+        // function isAverage(number) {
+        //     let sum = 0;
+        //     for (const i of arr1) {
+        //         sum += i;
+        //     }
+        //     const ave = sum / arr1.length;
+        //     console.log(ave);
+        // }
+        // isAverage(arr1);
+
+
+
+
+    </script>
+</body>
+
+</html>

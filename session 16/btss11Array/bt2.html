@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 2. Khai báo mảng 2 chiều số nguyên arrInt
+            // a. Nhập giá trị các phần tử của mảng từ bàn phím
+            // let arrInt = [];
+            // let x = +prompt("Nhap so phan tu cua mang");
+            // let y = +prompt("Nhap so phan tu cua cac mang con");
+            // for (let i = 0; i < x; i++) {
+            //     arrInt[i] = [];
+            //     for (let j = 0; j < y; j++) {
+            //         arrInt[i][j] = +prompt(`Nhap phan tu thu ${j + 1}/${y} cua mang con ${i + 1}/${x}`);
+            //     }
+            // }
+            // console.log(arrInt);
+            // // b. In giá trị các phần tử của mảng
+            // for (let i in arrInt) {
+            //     console.log("row " + i);
+            //     for (let j in arrInt) {
+            //         console.log(arrInt[i][j]);
+            //     }
+            // }
+            // // c. In giá trị các phần tử nằm trên đường biên (Coi mảng 2 chiều là ma
+            // // trận)
+            // for (let i = 0; i < x; i++) {
+            //     console.log(arrInt[0][i]);
+            //     console.log(arrInt[x - 1][i]);
+            // }
+            // for (let j = 0; j < y; j++) {
+            //     console.log(arrInt[j][0]);
+            //     console.log(arrInt[j][y - 1]);
+            // }
+            // d. In giá trị các phần tử nằm trên đường chéo chính và phụ
+            function maTran(num) {
+                const n = num.length
+                console.log(`duong cheo chinh`);
+                for (let i = 0; i < n; i++) {
+                    console.log(num[i][i]);
+                }
+                console.log(`duong cheo phu`);
+                for (let i = 0; i < n; i++) {
+                    console.log(num[i][n - i - 1]);
+                }
+            }
+            const num = [
+                [4, 2, 3, 1],
+                [5, 8, 7, 6],
+                [11, 10, 9, 12],
+                [15, 14, 13, 16]
+            ]
+            maTran(num)
+
+
+            // e. Sắp xếp mảng tăng dần theo dòng (không và có sử dụng hàm sort)
+            function tangDan(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = arr[i].sort((a, b) => a - b)
+                }
+                return arr
+            }
+
+            console.log(tangDan(num));
+
+    </script>
+</body>
+
+</html>
