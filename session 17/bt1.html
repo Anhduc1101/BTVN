@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //[Bài tập] Xây dựng lớp mô tả hình chữ nhật 
+        // Viết một lớp các đối tượng hình chữ nhật lấy tên là Rectangle, mỗi hình chữ nhật đều có những đặc tính sau:
+        // Có thông số chiều dài(int).
+        // Có thông số chiều rộng(int).
+        // Có tính năng tính diện tích.
+        // Có tính năng tính chu vi.
+
+        class Rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+
+            }
+            perimeter() {
+                console.log(2 * (this.length + this.width));
+            }
+            area() {
+                console.log(this.length * this.width);
+            }
+        }
+        let a = +(prompt("Nhập vào độ dài:"));
+        let b = +(prompt("Nhập vào độ rộng:"));
+
+        let rectangle1 = new Rectangle(a, b);
+        rectangle1.area();
+        rectangle1.perimeter();
+
+    </script>
+</body>
+
+</html>
