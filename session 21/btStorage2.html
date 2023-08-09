@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="input">
+        <input type="text" placeholder="Content" id="content">
+        <input type="date" id="dueDate">
+        <select id="status">
+            <option value="on">On</option>
+            <option value="off">Off</option>
+        </select>
+        <input type="text" placeholder="Username" id="assignedTo">
+        <button type="button" onclick="addNewProduct()">Submit</button>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Content</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Assigned to</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button>update</button></td>
+                <td><button>delete</button></td>
+            </tr> -->
+
+        </tbody>
+
+    </table>
+    <script>
+        let product = [
+            {
+                id: 1,
+                content: "Learn Javascript Session 01",
+                dueDate: "2023-04-17",
+                status: "Pending",
+                assignedTo: "Anh Bách",
+            },
+            {
+                id: 2,
+                content: "Learn Javascript Session 2",
+                dueDate: "2023-04-17",
+                status: "Pending",
+                assignedTo: "Lâm th`",
+            },
+            {
+                id: 3,
+                content: "Learn CSS Session 1",
+                dueDate: "2023-04-17",
+                status: "Pending",
+                assignedTo: "Hiếu Ci ớt ớt",
+            }
+        ];
+
+        let indexUpdateGlobal = null
+
+        // localStorage.setItem("products", JSON.stringify(product));
+
+        // 1. chức năng hiển thị : READ    
+        function showNewTable() {
+            // 1a: khai báo chuỗi rỗng
+            let str = "";
+            // 1b: duyệt chuỗi
+            for (i = 0; i < product.length; i++) {
+                let element = product[i];
+                str += `<tr>
+                    <td>${i + 1}</td>
+                    <td>${element.content}</td>
+                    <td>${element.dueDate}</td>
+                    <td>${element.status}</td>
+                    <td>${element.assignedTo}</td>
+                    <td><button onclick="clickUpdate(${element.id})">update</button></td>
+                    <td><button onclick="deleteProduct(${element.id})">delete</button></td>
+                </tr> `
+            }
+            // 1c: kết thúc vòng lặp, ơhair chèn lại vào chuỗi rỗng ban đầu
+            document.getElementById("tbody").innerHTML = str;
+        }
+        // 1d: gọi hàm show
+        showNewTable();
+
+        //2. chức năng thêm mới Add (cần id tự tăng)
+        function addNewProduct() {
+            // 2a: lấy nội dung ô cần hiển thị
+            let content = document.getElementById("content").value;
+            let dueDate = document.getElementById("dueDate").value;
+            let status = document.getElementById("status").value;
+            let assignedTo = document.getElementById("assignedTo").value;
+
+            if (indexUpdateGlobal != null) {
+                product[indexUpdateGlobal] = {
+                    content,
+                    dueDate,
+                    status,
+                    assignedTo
+                }
+                // 4b.4: cập nhật lại giao diện
+                showNewTable();
+                indexUpdateGlobal = null
+                return
+            }
+
+            // 2b: tạo danh mục mới có đầy đủ thuộc tính của danh mục cũ
+            let newId = idAutoUp();
+            let newProduct = {
+                content,
+                dueDate,
+                status,
+                assignedTo
+            }
+            // 2c: thêm vào mảng ban đầu
+            product.push(newProduct);
+            // 2d: cập nhật lại mảng
+            showNewTable();
+        }
+
+        // id tu tang
+        function idAutoUp() {
+            let idMAx = 0;
+            for (i = 0; i < product.length; i++) {
+                if (idMAx < product[i].id) {
+                    // product[i].id = idMAx; ?????????
+                    idMAx = product[i].id
+                }
+                // return idMAx++;?????????
+            }
+            return ++idMAx;
+        }
+
+        // 3 chức năng xóa : DELETE
+        function deleteProduct(idDelete) {
+            if (confirm("bạn có chắc muốn xóa?")) {
+                // 3.1 lấy ra được id cần xóa
+                let editIndex = product.findIndex(pro => pro.id == idDelete);
+                // 3.2 xóa theo splice
+                product.splice(editIndex, 1);
+                // 3.3 cập nhật lại giao diện
+                showNewTable();
+            }
+        }
+
+        // 4. chức năng chỉnh sửa: UPDATE (gồm edit và update)
+        // 4a : chức năng sửa Edit
+        // function editProduct(idEdit) {
+        //     // 4a.1: lấy toàn bộ thông tin danh mục cần chỉnh sửa
+        //     let editIndex = product.findIndex(edit => edit.id == idEdit);
+        //     // 4a.2: lấy đối tượng cần sửa
+        //     let productEdit = product[editIndex];
+        //     // 4a.3: đổ dữ liệu ra form
+        //     document.getElementById("content").value = productEdit.content;
+        //     document.getElementById("dueDate").value = productEdit.dueDate;
+        //     document.getElementById("status").value = productEdit.status;
+        //     document.getElementById("assignedTo").value = productEdit.assignedTo;
+        // }
+        // 4b: chức năng cập nhật update 
+        // ?????????? sao ben tren truyen tham so ma o day ko khai bao bien de nhan
+        // function updateProduct(idEdit) {
+        //     // 4b.1 : lấy nội dung ô input
+        //     let updateContent = document.getElementById("content").value;
+        //     let updateDueDate = document.getElementById("dueDate").value;
+        //     let updateStatus = document.getElementById("status").value;
+        //     let updateAssignedTo = document.getElementById("assignedTo").value;
+        //     // 4b.2: lấy ra vị trí cần sửa
+        //     let updateIndex = product.findIndex(up => up.id == idEdit)
+        //     // 4b.3: tiến hành sửa
+        //     product[updateIndex] = {
+        //         content: idEdit,
+        //         dueDate: updateDueDate,
+        //         status: updateStatus,
+        //         assignedTo: updateAssignedTo
+        //     }
+        //     // 4b.4: cập nhật lại giao diện
+        //     showNewTable();
+        // }
+
+
+        //  upadte
+
+        function clickUpdate(id) {
+            const index = product.findIndex(e => e.id == id)
+
+            document.getElementById("content").value = product[index].content;
+            document.getElementById("dueDate").value = product[index].dueDate;
+            document.getElementById("status").value = product[index].status;
+            document.getElementById("assignedTo").value = product[index].assignedTo;
+
+            indexUpdateGlobal = index
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

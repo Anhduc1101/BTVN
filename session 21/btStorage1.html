@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .box {
+            border: 1px solid red;
+            width: 200px;
+            height: auto;
+            margin: 20px;
+            padding: 15px;
+            line-height: 20px;
+        }
+
+        .box h2 {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        button {
+            width: 166px;
+            margin-top: 15px;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form class="box" border="1">
+        <h2>Register</h2>
+        <div class="email">
+            <label for="">Email:</label><br>
+            <input id="email" type="email" placeholder="Enter your email address" required><br>
+        </div>
+        <div class="password">
+            <label for="">Password:</label><br>
+            <input id="password" type="password" placeholder="Enter your Password" required><br>
+        </div>
+        <div class="confirmPassword">
+            <label for="">Confirm Password:</label><br>
+            <input id="confirmPassword" type="password" placeholder="Enter your Confirm Password" required><br>
+        </div>
+        <button type="button" onclick="bam()">Register</button>
+        <p id="warn">0</p>
+    </form>
+
+    <script>
+
+        //   localStorage.setItem("user", JSON.stringify([]));
+        function bam() {
+            // lay du lieu ng dung nhap vao
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            // thong bao loi
+            let warn = document.getElementById("warn");
+            warn.innerHTML = "";
+
+            if (!email || !password || !confirmPassword) {
+                warn.innerHTML = "Bạn chưa nhập gì.";
+                return;
+            }
+
+            // xac nhan mat khau co trung hop hay ko
+            if (password != confirmPassword) {
+                warn.innerHTML = " nhập lại mật khẩu chưa đúng";
+                return;
+            }
+
+            // kiem tra su ton tai cua email
+            let existingUser = JSON.parse(localStorage.getItem("user"));
+            let index = existingUser.findIndex(user => user.email == email)
+            if (index == -1) {
+                let user = { email, password };
+                warn.innerHTML = " ban da tao thanh cong";
+                existingUser.push(user)
+                localStorage.setItem("user", JSON.stringify(existingUser));
+            } else {
+                alert("Ton tai tk")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
